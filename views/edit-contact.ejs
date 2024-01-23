@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            <h2> edit </h2>
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(error => { %>
+                            <li> <%= error.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
+            <form class="row g-3" method="post" action="/contact/update">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control"  name="email" id="email" value ="<%= data.email %>"required/>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">nama</label>
+                  <input type="hidden" class="form-control" name="oldNama" id="oldNama"  value ="<%= (data.oldNama)? data.oldNama: data.nama %>"/>
+                  <input type="text" class="form-control" name="nama" id="nama"  value ="<%= data.nama %>" />
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">nohp</label>
+                    <input type="text" class="form-control" name="nohp" id="nohp" value ="<%= data.nohp %>"required/>
+                  </div>
+                
+                  
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">update</button>
+                </div>
+              </form>
+
+        </div>
+    </div>
+</div>

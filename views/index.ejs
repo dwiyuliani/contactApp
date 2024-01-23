@@ -1,0 +1,21 @@
+
+
+
+
+    
+    <div class="card">
+        <div class="card-body">
+            <h2>DAFTAR MAHASISWA</h2>
+
+            <% if (mahasiswa.length < 1) { %>
+                <p> Data kosong</p>
+            <% }else{ %>
+            <% mahasiswa.forEach(mhs => { %>
+                <ul>
+                    <li> Nama :  <%= mhs.nama %></li>
+                    <li> Email : <%= mhs.email %></li>
+                </ul>
+            <% }) %>
+            <% } %>
+        </div>
+      </div>
